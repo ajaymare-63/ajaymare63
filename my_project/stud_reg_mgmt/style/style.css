@@ -1,0 +1,295 @@
+/* Styles used throughout the entire web site */
+
+html {
+    /* font-size 62.5% makes 1rem equal 10px for easy size calculations. */
+    font-size: 62.5%;
+    font-family: Calibri, Arial, sans-serif;
+    /* NEW CHANGES */
+    background-color: #e3f5fa;
+    
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    /* Default font-size to about 18px */
+    font-size: 1.8rem;
+}
+
+.logo{
+    float: left; margin-left: 15px; margin-right: 30px;
+}
+section p{
+    text-align: justify;
+}
+
+input, button {
+    margin: 0;    
+    font-size: 1.8rem;
+    font-family: Calibri, Arial, sans-serif;
+}
+
+.container {
+    padding: 0 1rem;
+    max-width: 94rem;
+    /* Horizontally center containers */
+    margin: 0 auto;
+}
+
+section.page-section .container {
+    padding-bottom: 2rem;
+}
+
+h1 {
+    font-size: 4rem;
+    letter-spacing: -1px;
+    margin: 1em 0 .25em 0;
+}
+
+
+
+/* Styles for the page navigation bar */
+nav.page-nav {
+    /* NEW CHANGES */
+    background-color: #112550;
+
+    line-height: 6rem;
+    font-size: 1.7rem;
+}
+
+nav.page-nav .container {
+    display: flex;
+    display: flexbox;
+}
+
+nav.page-nav a {
+    display: block;
+    min-width: 9rem;
+    padding: 0 1.8rem;
+    border-right: 1px dotted #3D3D3D;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    color: #c3c3c3;
+
+    text-shadow: 0 1px 0 #000;
+}
+
+nav.page-nav a:first-child {
+    border-left: 1px dotted #3D3D3D;
+}
+
+nav.page-nav a:hover {
+    color: #e4e4e4;
+    background-color: black;
+}
+
+nav.page-nav .active {
+    color: #fff;
+
+    /* Background gradient effects */
+    /* NEW CHANGES */
+    background: linear-gradient(#a0e2f3, #0370b9);
+}
+
+nav.page-nav .active:hover {
+    color: #fff; /* Overrides hover effect for active page link */
+}
+
+nav.page-nav .active:before /* Creates ribbon effect on active link */ {
+    position: absolute;
+    top: 6rem;
+    display: block;
+    height: 0;
+    width: 0;
+    margin-left: -1.9rem;
+    border-top: 2rem solid #0370b9;  /* NEW CHANGES */
+    border-right: 6.5rem solid transparent;
+    content: "";
+}
+
+nav.page-nav .active:after /* Creates ribbon effect on active link */ {
+    position: absolute;
+    display: block;
+    height: 0;
+    width: 0;
+    margin-left: 4.3rem;
+    border-top: 2rem solid #0370b9;  /* NEW CHANGES */
+    border-left: 6.5rem solid transparent;
+    content: "";
+}
+
+/* Styles for the page header */
+header.page-header {
+    height: 20rem;
+
+    /* NEW CHANGES */
+    color: #fff;
+    background-color: #465079;
+    
+    background-repeat: repeat-x;
+    background-position: left bottom;
+    border-bottom: 4px solid #1d1d1d;
+}
+
+header.page-header .container {
+    padding: 1rem;
+    position: relative;
+}
+
+header.page-header h1 {
+    margin: 0;
+    font-size: 6rem;
+    padding-top: 3rem;
+}
+
+header.page-header p {
+    font-size: 2rem;
+    font-style: italic;
+}
+
+header.page-header .register {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    width: 160px;
+    height: 100px;
+    padding-top: 60px;
+    opacity: 0.8;
+    font-size: 2.7rem;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    /* Rounded corners to create circle */
+    border-radius: 100%;
+    text-shadow: 0 1px 0 #000;
+    transform: rotate(6deg);
+    background: -ms-linear-gradient(#a80000, #740404);
+    background: linear-gradient(#a80000, #740404);
+
+    /* TODO: Transition the transform property over 1 second */
+    transition: transform 1s;
+}
+
+header.page-header .register:hover {
+    color: #fff;
+    background: -ms-linear-gradient(#bc0101, #8c0909);
+    background: linear-gradient(#bc0101, #8c0909);
+
+    /* TODO: rotate to 16 degrees and scale by 1.1 */
+    transform: rotate(16deg) scale(1.1,1.1);
+
+    /* TODO: Transition the transform property over 1 second */
+    transition: transform 1s;
+}
+
+header.page-header .register:before /* Creates dotted border */ {
+    display: block;
+    position: absolute;
+    top: -7px;
+    right: -7px;
+    height: 168px;
+    width: 168px;
+    content: "";
+    border: 3px dotted #740404;
+    border-radius: 100%;
+}
+
+header.page-header .register .free {
+    font-size: 80%;
+}
+
+
+
+/* Style for the page footer */
+footer.page-footer {
+    background-color: #465079;
+    color: #fff;
+    font-size: 1.4rem;
+    height: 18rem;
+}
+
+footer.page-footer .container {
+    padding: 1rem;
+}
+
+
+
+/* To stick the footer at the bottom of the page, give the page-section a min-height so it pushes down */
+section.page-section {
+    min-height: calc(100% - 46.6rem); /* 46.6rem is the combined height of the nav, header and footer. */
+}
+
+
+/* Styles for the index page */
+
+.speakers ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    display: flexbox;
+    
+    flex-wrap: wrap;
+}
+
+.speakers li {
+    display: block;
+    margin: 0 2rem 1rem 0; 
+}
+
+.speakers li img {
+    border: 1px solid #888;
+}
+
+.speakers li .name {
+    text-align: center;
+    display: block;
+}
+
+
+.video video {
+    max-width: 100%;    
+}
+
+/* Styles for the register page */
+form {
+    border: 4px solid rgb(29, 50, 66);
+    background-color: #bad4e5;
+}
+
+label{
+font-weight: Bold;
+font-size: 18px;
+}
+
+input[type=text], input[type=password], input[type=email], input[type=number], input[type=url], input[type=date], input[type=phone], textarea, select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 40%;
+}
+
+input[type=submit]:hover {
+  opacity: 0.8;
+}
+
+input[type=reset] {
+  width: 30%;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
